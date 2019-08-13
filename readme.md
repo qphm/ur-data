@@ -1,1 +1,1 @@
-This repository is for my homeworks
+This repository is for my UR Data Analytics homework
