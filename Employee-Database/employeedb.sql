@@ -16,6 +16,7 @@ CREATE TABLE "dept_manager" (
     "emp_no" INT NOT NULL,
     "from_date" DATE NOT NULL,
     "to_date" DATE NOT NULL
+    FOREIGN KEY(dept_no) REFERENCES employees(emp_no) ON DELETE SET NULL
 );
 
 CREATE TABLE "employees" (
@@ -46,6 +47,10 @@ ADD FOREIGN KEY(dept_no)
 REFERENCES departments(dept_no)
 ON DELETE SET NULL;
 
+ALTER TABLE dept_manager
+ADD FOREIGN KEY(emp_no)
+REFERENCES employees(emp_no)
+ON DELETE SET NULL;
 
 --------------------------------------------------
 -- Data Analysis
