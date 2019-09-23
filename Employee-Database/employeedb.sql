@@ -1,5 +1,5 @@
 CREATE TABLE "departments" (
-    "dept_no" VARCHAR NOT NULL,
+    "dept_no" VARCHAR PRIMARY KEY,
     "dept_name" VARCHAR NOT NULL,
      )
 );
@@ -19,7 +19,7 @@ CREATE TABLE "dept_manager" (
 );
 
 CREATE TABLE "employees" (
-    "emp_no" INT NOT NULL,
+    "emp_no" INT PRIMARY KEY,
     "birth_date" DATE NOT NULL,
     "first_name" VARCHAR NOT NULL,
     "last_name" VARCHAR NOT NULL,
