@@ -1,7 +1,6 @@
 CREATE TABLE "departments" (
     "dept_no" VARCHAR PRIMARY KEY,
     "dept_name" VARCHAR NOT NULL,
-     )
 );
 
 CREATE TABLE "dept_emp" (
@@ -9,6 +8,7 @@ CREATE TABLE "dept_emp" (
     "dept_no" VARCHAR NOT NULL,
     "from_date" DATE NOT NULL,
     "to_date" DATE NOT NULL
+    FOREIGN KEY(dept_no) REFERENCES employees(emp_no) ON DELETE SET NULL
 );
 
 CREATE TABLE "dept_manager" (
@@ -25,7 +25,6 @@ CREATE TABLE "employees" (
     "last_name" VARCHAR NOT NULL,
     "gender" VARCHAR NOT NULL,
     "hire_date" DATE NOT NULL,
-     )
 );
 
 CREATE TABLE "salaries" (
@@ -40,7 +39,14 @@ CREATE TABLE "titles" (
     "title" VARCHAR NOT NULL,
     "from_date" DATE NOT NULL,
     "to_date" DATE NOT NULL
--- );
+ );
+
+ALTER TABLE employees
+ADD FOREIGN KEY(dept_no)
+REFERENCES departments(dept_no)
+ON DELETE SET NULL;
+
+
 --------------------------------------------------
 -- Data Analysis
 
